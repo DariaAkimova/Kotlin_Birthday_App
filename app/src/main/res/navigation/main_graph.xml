@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/createItemFragment">
+
+    <fragment
+        android:id="@+id/createItemFragment"
+        android:name="com.adv.kotlin_birthday_app.CreateItemFragment"
+        android:label="fragment_create_item"
+        tools:layout="@layout/fragment_create_item" >
+        <action
+            android:id="@+id/action_createItemFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.adv.kotlin_birthday_app.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_createItemFragment"
+            app:destination="@id/createItemFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_randomTextFragment"
+            app:destination="@id/randomTextFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomTextFragment"
+        android:name="com.adv.kotlin_birthday_app.RandomTextFragment"
+        android:label="fragment_random_text"
+        tools:layout="@layout/fragment_random_text" >
+        <action
+            android:id="@+id/action_randomTextFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+</navigation>
