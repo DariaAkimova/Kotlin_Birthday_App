@@ -5,23 +5,18 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".ListFragment">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="3dp"
-        android:background="@color/white"
-        android:scaleType="centerCrop"
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/confetti_png_clipart_image"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/header_bg"
+        android:id="@+id/header_bg2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/white"
@@ -30,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/logo2"
+        android:id="@+id/logo4"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="-50dp"
@@ -40,28 +35,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/logo_text2"
+        android:id="@+id/logo_text4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="B.day"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/slogan_text2"
+        android:id="@+id/slogan_text4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="44dp"
         android:text="don't forget to selebrate"
         android:textColor="@color/base_color"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/logo2"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/logo4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -73,9 +68,9 @@
         android:paddingBottom="25dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/bottom_bg"
-        app:layout_constraintEnd_toEndOf="@id/imageView3"
+        app:layout_constraintEnd_toEndOf="@id/imageView4"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/imageView3"
+        app:layout_constraintStart_toStartOf="@id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_layout" />
@@ -97,6 +92,7 @@
         app:tint="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
 
+
     <View
         android:id="@+id/bottom_bg"
         android:layout_width="match_parent"
@@ -108,31 +104,31 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView3"
         style="@style/text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="156dp"
-        android:text="Нужно поздравление? Жми на кнопку!"
+        android:text="Нужно поздравление?"
         android:textColor="@color/accent_color"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@id/bottom_bg"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/bottom_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/bottom_bg" />
 
     <Button
+        style = "@style/Widget.Material3.Button.TextButton"
         android:id="@+id/to_text_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        android:text="СГЕНЕРИРОВАТЬ ПОЗДРАВЛЕНИЕ"
-        app:backgroundTint="@color/accent_color"
+        android:text="Жми сюда!"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@id/bottom_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

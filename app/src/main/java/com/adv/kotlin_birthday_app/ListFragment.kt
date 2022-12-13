@@ -4,26 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.room.Room
 import com.adv.kotlin_birthday_app.databinding.FragmentListBinding
-import com.adv.kotlin_birthday_app.room.FriendDataDao
-import com.adv.kotlin_birthday_app.room.LocalDb
-import kotlin.random.Random
 
 class ListFragment : Fragment() {
 
     lateinit var binding: FragmentListBinding
-    lateinit var dao: FriendDataDao
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentListBinding.inflate(inflater)
-        val room = Room.databaseBuilder(requireContext(), LocalDb::class.java, "friendData").build()
-        dao = room.friendDataDao()
         return binding.root
     }
 
@@ -32,11 +27,16 @@ class ListFragment : Fragment() {
 
         val adapter = FriendsListAdapter()
 
-//        binding.recyclerView.adapter = adapter
+        binding.recyclerView.adapter = adapter
+
+        var viewModel = ViewModelProvider(requireActivity())[FriendsViewModel::class.java]
 
 
-//        adapter.updateList(dao.getAll() as MutableList<Item>)
-
+        viewModel.getAll()?.observe(requireActivity()) {
+            if (it.isEmpty()) {
+                Toast.makeText(requireActivity(), "No data", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         binding.addBtn.setOnClickListener {
             Navigation.findNavController(it)
@@ -44,11 +44,8 @@ class ListFragment : Fragment() {
         }
 
         binding.toTextBtn.setOnClickListener {
-            val randomIds = List(1) { Random.nextInt(1, 100) }
-            var randomId = randomIds.joinToString().toInt()
-
             Navigation.findNavController(it)
                 .navigate(R.id.action_listFragment_to_randomTextFragment)
         }
     }
-}
+    }

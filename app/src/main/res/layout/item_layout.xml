@@ -6,7 +6,7 @@
     <data>
         <variable
             name = "item"
-            type = "com.adv.kotlin_birthday_app.Item" />
+            type = "com.adv.kotlin_birthday_app.room.FriendEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -5,11 +5,12 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".CreateItemFragment">
 
 
     <View
-        android:id="@+id/logo2"
+        android:id="@+id/logo3"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="-50dp"
@@ -19,20 +20,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/logo_text2"
+        android:id="@+id/logo_text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="B.day"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/slogan_text2"
+        android:id="@+id/slogan_text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -40,7 +41,7 @@
         android:text="don't forget to selebrate"
         android:textColor="@color/base_color"
         android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/logo2"
+        app:layout_constraintStart_toEndOf="@+id/logo3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
@@ -55,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_text2"
+        app:layout_constraintTop_toBottomOf="@+id/logo_text3"
         app:layout_constraintVertical_bias="0.657" />
 
     <TextView
@@ -65,8 +66,8 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="20dp"
-        android:text="Add new info"
-        android:textSize="25dp"
+        android:text="Введите данные"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/editName"
         app:layout_constraintStart_toStartOf="@+id/edit_text_view"
@@ -82,7 +83,7 @@
         android:layout_marginEnd="37dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="name"
+        android:hint="Имя"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textSize="25sp"
@@ -109,7 +110,7 @@
         android:layout_marginEnd="37dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="date"
+        android:hint="Дата"
         android:inputType="date"
         android:padding="10dp"
         android:textSize="25dp"
@@ -131,14 +132,14 @@
 
     <Button
         android:id="@+id/saveBtn"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="118dp"
-        android:text="SAVE"
-        android:textSize="15dp"
+        android:text="СОХРАНИТЬ"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_view"
         app:layout_constraintVertical_bias="1.0" />
@@ -148,31 +149,14 @@
         style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="28dp"
         android:layout_marginBottom="118dp"
-        android:text="CANCEL"
+        android:text="ОТМЕНА"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/saveBtn"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_view"
         app:layout_constraintVertical_bias="1.0"
         app:strokeColor="@color/base_color"
         app:strokeWidth="2dp" />
-
-    <Button
-        android:id="@+id/to_calendar_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="494dp" />
-
-    <ImageView
-        android:id="@+id/to_calendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:src="@drawable/ic_baseline_access_alarm_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="180dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

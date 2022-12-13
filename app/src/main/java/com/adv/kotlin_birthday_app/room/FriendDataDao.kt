@@ -1,17 +1,20 @@
 package com.adv.kotlin_birthday_app.room
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.adv.kotlin_birthday_app.Item
+import com.adv.kotlin_birthday_app.model.FriendData
 
-    @Dao
+@Dao
     interface FriendDataDao {
 
-        @Query("select * from FriendData")
-        fun getAll(): List<Item>
+        @Query("select * from friendData")
+        fun getAll(): LiveData<List<FriendEntity>>
 
         @Insert(onConflict = OnConflictStrategy.REPLACE)
-        fun insert(Item: Item)
+
+//        fun insert(FriendData: FriendEntity)
+        suspend fun insert(entity: FriendEntity)
 
         @Delete
-        fun delete (Item : Item)
+        fun delete (FriendData : FriendEntity)
     }
