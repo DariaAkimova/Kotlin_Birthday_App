@@ -14,8 +14,7 @@ import kotlinx.coroutines.launch
 class FriendsViewModel(application: Application) : AndroidViewModel(application) {
 
     private var friends: LiveData<List<FriendEntity>>? = null
-//
-//    var newFriends: MutableLiveData<FriendEntity> = MutableLiveData()
+
 
     private val repository: FriendRepository
     init {
