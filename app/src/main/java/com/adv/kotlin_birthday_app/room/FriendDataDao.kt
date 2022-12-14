@@ -10,8 +10,8 @@ import com.adv.kotlin_birthday_app.model.FriendData
         @Query("select * from friendData")
         fun getAll(): LiveData<List<FriendEntity>>
 
-//        @Insert(onConflict = OnConflictStrategy.REPLACE)
-       @Insert(onConflict = OnConflictStrategy.ABORT)
+        @Insert(onConflict = OnConflictStrategy.REPLACE)
+//       @Insert(onConflict = OnConflictStrategy.IGNORE)
 
 //        fun insert(FriendData: FriendEntity)
         suspend fun insert(entity: FriendEntity)

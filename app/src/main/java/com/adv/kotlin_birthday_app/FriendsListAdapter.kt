@@ -13,7 +13,7 @@ class FriendsListAdapter : RecyclerView.Adapter<FriendsListAdapter.ViewHolder>()
         set(value) {
             field = value
             notifyDataSetChanged()
-        }
+            }
 
     private var itemClick: (FriendEntity) -> Unit = {}
     fun itemClick(listener: (FriendEntity) -> Unit) {
@@ -27,12 +27,14 @@ class FriendsListAdapter : RecyclerView.Adapter<FriendsListAdapter.ViewHolder>()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.item = items[position]
+        holder.itemView.setOnClickListener {
+            itemClick(items[position])
+        }
         }
 
     override fun getItemCount(): Int {
         return items.size
     }
-
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var binding = ItemLayoutBinding.bind(view)

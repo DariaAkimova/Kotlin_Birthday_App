@@ -18,7 +18,8 @@ class FriendsViewModel(application: Application) : AndroidViewModel(application)
 
     private val repository: FriendRepository
     init {
-        val dao = Room.databaseBuilder(application.applicationContext, LocalDb::class.java, "friendData")
+             val dao = Room.databaseBuilder(application.applicationContext, LocalDb::class.java, "friendData")
+            .fallbackToDestructiveMigration()
             .build()
             .friendDataDao()
         repository = FriendRepository(dao)
