@@ -3,6 +3,7 @@ package com.adv.kotlin_birthday_app
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.room.Room
 import com.adv.kotlin_birthday_app.model.FriendRepository
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 class FriendsViewModel(application: Application) : AndroidViewModel(application) {
 
     private var friends: LiveData<List<FriendEntity>>? = null
-
+//
 //    var newFriends: MutableLiveData<FriendEntity> = MutableLiveData()
 
     private val repository: FriendRepository
@@ -22,7 +23,7 @@ class FriendsViewModel(application: Application) : AndroidViewModel(application)
             .fallbackToDestructiveMigration()
             .build()
             .friendDataDao()
-        repository = FriendRepository(dao)
+             repository = FriendRepository(dao)
     }
 
 

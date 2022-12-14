@@ -31,17 +31,18 @@ class RandomTextFragment : Fragment() {
 
         binding.newTextBtn.setOnClickListener {
 
-        var dateService = TextRestApi.getService()
+        var textService = TextRestApi.getService()
 
         val randomIds = List(1) { Random.nextInt(1, 100) }
         var randomId = randomIds.joinToString().toInt()
 
-        dateService.getById(randomId).enqueue(object: Callback<TextResponse> {
+        textService.getById(randomId).enqueue(object: Callback<TextResponse> {
             override fun onResponse(
                 call: Call<TextResponse>,
                 response: Response<TextResponse>
             ) {
-                binding.randomText.text = response.body().toString()
+
+                binding.randomText.text = response.body()?.body.toString()
             }
 
             override fun onFailure(call: Call<TextResponse>, t: Throwable) {

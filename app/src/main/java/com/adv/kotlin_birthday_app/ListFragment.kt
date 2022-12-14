@@ -36,6 +36,7 @@ class ListFragment : Fragment() {
             if (it.isEmpty()) {
                 Toast.makeText(requireActivity(), "No data", Toast.LENGTH_SHORT).show()
             }
+            adapter.items = it
         }
 
         binding.addBtn.setOnClickListener {
