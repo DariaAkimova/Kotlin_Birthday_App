@@ -31,7 +31,8 @@ class CreateItemFragment : Fragment() {
 
             var nameText = binding.editName.text.toString().trim()
             var dateText = binding.editDate.text.toString().trim()
-            var friendItem = FriendEntity(id, name = nameText, date = dateText)
+            var ideaText = binding.editIdea.text.toString().trim()
+            var friendItem = FriendEntity(id, name = nameText, date = dateText, idea = ideaText)
 
             viewModel.insert(friendItem)
 
